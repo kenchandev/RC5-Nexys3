@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\KAC\Desktop\RC5 - All\RC5\RC5_NX3.ncd
+OUTFILE=C:\Users\KAC\Desktop\RC5 - All\RC5\RC5_NX3.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\KAC\Desktop\RC5 - All\RC5
+LICENSE=WebPack
+USER_INFO=210862641_0_0_566

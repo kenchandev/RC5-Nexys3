@@ -1,0 +1,1521 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.39 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.39 secs
+ 
+--> Reading design: RC5_NX3.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "RC5_NX3.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "RC5_NX3"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : RC5_NX3
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\rc5_pkg.vhd" into library work
+Parsing package <rc5_pkg>.
+Parsing package body <rc5_pkg>.
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\DigitConverter.vhd" into library work
+Parsing entity <digitConverter>.
+Parsing architecture <digitConverter> of entity <digitconverter>.
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\Source.vhd" into library work
+Parsing entity <source>.
+Parsing architecture <source> of entity <source>.
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\rc5_key_exp.vhd" into library work
+Parsing entity <rc5_key_exp>.
+Parsing architecture <Behavioral> of entity <rc5_key_exp>.
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\rc5_enc.vhd" into library work
+Parsing entity <rc5_enc>.
+Parsing architecture <Behavioral> of entity <rc5_enc>.
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\rc5_dec.vhd" into library work
+Parsing entity <rc5_dec>.
+Parsing architecture <Behavioral> of entity <rc5_dec>.
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\OutputProc.vhd" into library work
+Parsing entity <outputProcessor>.
+Parsing architecture <outputProcessor> of entity <outputprocessor>.
+Parsing VHDL file "C:\Users\KAC\Desktop\RC5 - All\rc5_complete_design.vhd" into library work
+Parsing entity <RC5_NX3>.
+Parsing architecture <behavior> of entity <rc5_nx3>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <RC5_NX3> (architecture <behavior>) from library <work>.
+
+Elaborating entity <rc5_enc> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <rc5_dec> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <rc5_key_exp> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <source> (architecture <source>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\KAC\Desktop\RC5 - All\Source.vhd" Line 39. Case statement is complete. others clause is never selected
+
+Elaborating entity <outputProcessor> (architecture <outputProcessor>) from library <work>.
+
+Elaborating entity <digitConverter> (architecture <digitConverter>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\KAC\Desktop\RC5 - All\OutputProc.vhd" Line 47. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "C:\Users\KAC\Desktop\RC5 - All\rc5_complete_design.vhd" Line 193: key_vld should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <RC5_NX3>.
+    Related source file is "c:/users/kac/desktop/rc5 - all/rc5_complete_design.vhd".
+    Found 1-bit register for signal <clr_dec>.
+    Found 1-bit register for signal <send_clr>.
+    Found 1-bit register for signal <gen_key>.
+    Found 1-bit register for signal <gen_cipher>.
+    Found 1-bit register for signal <decrypt_cipher>.
+    Found 1-bit register for signal <clock>.
+    Found 31-bit register for signal <counter>.
+    Found 3-bit register for signal <state>.
+    Found 64-bit register for signal <ciphertext_reg>.
+    Found 64-bit register for signal <plaintext_reg>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clock (rising_edge)                            |
+    | Reset              | clr (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle_state                                     |
+    | Power Up State     | idle_state                                     |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 31-bit adder for signal <counter[30]_GND_7_o_add_2_OUT> created at line 183.
+    Found 31-bit comparator greater for signal <GND_7_o_counter[30]_LessThan_1_o> created at line 179
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 165 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   6 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <RC5_NX3> synthesized.
+
+Synthesizing Unit <rc5_enc>.
+    Related source file is "c:/users/kac/desktop/rc5 - all/rc5_enc.vhd".
+    Found 32-bit register for signal <a_reg>.
+    Found 32-bit register for signal <b_reg>.
+    Found 2-bit register for signal <state>.
+    Found 4-bit register for signal <i_cnt>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | clr (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <a_pre> created at line 76.
+    Found 32-bit adder for signal <a> created at line 77.
+    Found 32-bit adder for signal <b_pre> created at line 113.
+    Found 32-bit adder for signal <b> created at line 114.
+    Found 4-bit adder for signal <i_cnt[3]_GND_8_o_add_12_OUT> created at line 126.
+    Found 32-bit 32-to-1 multiplexer for signal <a_rot> created at line 43.
+    Found 32-bit 26-to-1 multiplexer for signal <n0153> created at line 77.
+    Found 32-bit 32-to-1 multiplexer for signal <b_rot> created at line 80.
+    Found 32-bit 26-to-1 multiplexer for signal <n0159> created at line 114.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  68 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <rc5_enc> synthesized.
+
+Synthesizing Unit <rc5_dec>.
+    Related source file is "c:/users/kac/desktop/rc5 - all/rc5_dec.vhd".
+    Found 2-bit register for signal <state>.
+    Found 4-bit register for signal <i_cnt>.
+    Found 1-bit register for signal <a_reg<31>>.
+    Found 1-bit register for signal <a_reg<30>>.
+    Found 1-bit register for signal <a_reg<29>>.
+    Found 1-bit register for signal <a_reg<28>>.
+    Found 1-bit register for signal <a_reg<27>>.
+    Found 1-bit register for signal <a_reg<26>>.
+    Found 1-bit register for signal <a_reg<25>>.
+    Found 1-bit register for signal <a_reg<24>>.
+    Found 1-bit register for signal <a_reg<23>>.
+    Found 1-bit register for signal <a_reg<22>>.
+    Found 1-bit register for signal <a_reg<21>>.
+    Found 1-bit register for signal <a_reg<20>>.
+    Found 1-bit register for signal <a_reg<19>>.
+    Found 1-bit register for signal <a_reg<18>>.
+    Found 1-bit register for signal <a_reg<17>>.
+    Found 1-bit register for signal <a_reg<16>>.
+    Found 1-bit register for signal <a_reg<15>>.
+    Found 1-bit register for signal <a_reg<14>>.
+    Found 1-bit register for signal <a_reg<13>>.
+    Found 1-bit register for signal <a_reg<12>>.
+    Found 1-bit register for signal <a_reg<11>>.
+    Found 1-bit register for signal <a_reg<10>>.
+    Found 1-bit register for signal <a_reg<9>>.
+    Found 1-bit register for signal <a_reg<8>>.
+    Found 1-bit register for signal <a_reg<7>>.
+    Found 1-bit register for signal <a_reg<6>>.
+    Found 1-bit register for signal <a_reg<5>>.
+    Found 1-bit register for signal <a_reg<4>>.
+    Found 1-bit register for signal <a_reg<3>>.
+    Found 1-bit register for signal <a_reg<2>>.
+    Found 1-bit register for signal <a_reg<1>>.
+    Found 1-bit register for signal <a_reg<0>>.
+    Found 1-bit register for signal <b_reg<31>>.
+    Found 1-bit register for signal <b_reg<30>>.
+    Found 1-bit register for signal <b_reg<29>>.
+    Found 1-bit register for signal <b_reg<28>>.
+    Found 1-bit register for signal <b_reg<27>>.
+    Found 1-bit register for signal <b_reg<26>>.
+    Found 1-bit register for signal <b_reg<25>>.
+    Found 1-bit register for signal <b_reg<24>>.
+    Found 1-bit register for signal <b_reg<23>>.
+    Found 1-bit register for signal <b_reg<22>>.
+    Found 1-bit register for signal <b_reg<21>>.
+    Found 1-bit register for signal <b_reg<20>>.
+    Found 1-bit register for signal <b_reg<19>>.
+    Found 1-bit register for signal <b_reg<18>>.
+    Found 1-bit register for signal <b_reg<17>>.
+    Found 1-bit register for signal <b_reg<16>>.
+    Found 1-bit register for signal <b_reg<15>>.
+    Found 1-bit register for signal <b_reg<14>>.
+    Found 1-bit register for signal <b_reg<13>>.
+    Found 1-bit register for signal <b_reg<12>>.
+    Found 1-bit register for signal <b_reg<11>>.
+    Found 1-bit register for signal <b_reg<10>>.
+    Found 1-bit register for signal <b_reg<9>>.
+    Found 1-bit register for signal <b_reg<8>>.
+    Found 1-bit register for signal <b_reg<7>>.
+    Found 1-bit register for signal <b_reg<6>>.
+    Found 1-bit register for signal <b_reg<5>>.
+    Found 1-bit register for signal <b_reg<4>>.
+    Found 1-bit register for signal <b_reg<3>>.
+    Found 1-bit register for signal <b_reg<2>>.
+    Found 1-bit register for signal <b_reg<1>>.
+    Found 1-bit register for signal <b_reg<0>>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | clr (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <a_minus> created at line 30.
+    Found 32-bit subtractor for signal <b_minus> created at line 37.
+    Found 32-bit subtractor for signal <a_post> created at line 41.
+    Found 32-bit subtractor for signal <b_post> created at line 42.
+    Found 4-bit subtractor for signal <GND_10_o_GND_10_o_sub_13_OUT<3:0>> created at line 135.
+    Found 32-bit 26-to-1 multiplexer for signal <i_cnt[3]_X_9_o_wide_mux_0_OUT> created at line 47.
+    Found 32-bit 26-to-1 multiplexer for signal <i_cnt[3]_X_9_o_wide_mux_2_OUT> created at line 49.
+    Found 32-bit 32-to-1 multiplexer for signal <am_rot> created at line 51.
+    Found 32-bit 32-to-1 multiplexer for signal <bm_rot> created at line 88.
+    Found 32-bit 4-to-1 multiplexer for signal <a_reg[31]_a_post[31]_mux_21_OUT> created at line 147.
+    Found 32-bit 4-to-1 multiplexer for signal <b_reg[31]_b_post[31]_mux_28_OUT> created at line 163.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  68 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <rc5_dec> synthesized.
+
+Synthesizing Unit <rc5_key_exp>.
+    Related source file is "c:/users/kac/desktop/rc5 - all/rc5_key_exp.vhd".
+    Found 2-bit register for signal <j_cnt>.
+    Found 2-bit register for signal <state>.
+    Found 7-bit register for signal <k_cnt>.
+    Found 32-bit register for signal <a_reg>.
+    Found 32-bit register for signal <b_reg>.
+    Found 32-bit register for signal <l_arr<0>>.
+    Found 32-bit register for signal <l_arr<1>>.
+    Found 32-bit register for signal <l_arr<2>>.
+    Found 32-bit register for signal <l_arr<3>>.
+    Found 32-bit register for signal <s_arr_tmp<1>>.
+    Found 32-bit register for signal <s_arr_tmp<2>>.
+    Found 32-bit register for signal <s_arr_tmp<3>>.
+    Found 32-bit register for signal <s_arr_tmp<4>>.
+    Found 32-bit register for signal <s_arr_tmp<5>>.
+    Found 32-bit register for signal <s_arr_tmp<6>>.
+    Found 32-bit register for signal <s_arr_tmp<7>>.
+    Found 32-bit register for signal <s_arr_tmp<8>>.
+    Found 32-bit register for signal <s_arr_tmp<9>>.
+    Found 32-bit register for signal <s_arr_tmp<10>>.
+    Found 32-bit register for signal <s_arr_tmp<11>>.
+    Found 32-bit register for signal <s_arr_tmp<12>>.
+    Found 32-bit register for signal <s_arr_tmp<13>>.
+    Found 32-bit register for signal <s_arr_tmp<14>>.
+    Found 32-bit register for signal <s_arr_tmp<15>>.
+    Found 32-bit register for signal <s_arr_tmp<16>>.
+    Found 32-bit register for signal <s_arr_tmp<17>>.
+    Found 32-bit register for signal <s_arr_tmp<18>>.
+    Found 32-bit register for signal <s_arr_tmp<19>>.
+    Found 32-bit register for signal <s_arr_tmp<20>>.
+    Found 32-bit register for signal <s_arr_tmp<21>>.
+    Found 32-bit register for signal <s_arr_tmp<22>>.
+    Found 32-bit register for signal <s_arr_tmp<23>>.
+    Found 32-bit register for signal <s_arr_tmp<24>>.
+    Found 32-bit register for signal <s_arr_tmp<25>>.
+    Found 5-bit register for signal <i_cnt>.
+    Found 32-bit register for signal <s_arr_tmp<0>>.
+    Found finite state machine <FSM_3> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | clr (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle_state                                     |
+    | Power Up State     | idle_state                                     |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <ab_tmp> created at line 47.
+    Found 32-bit adder for signal <b_tmp1> created at line 48.
+    Found 32-bit adder for signal <a_tmp12> created at line 84.
+    Found 32-bit adder for signal <a_tmp1> created at line 85.
+    Found 5-bit adder for signal <i_cnt[4]_GND_12_o_add_37_OUT> created at line 104.
+    Found 2-bit adder for signal <j_cnt[1]_GND_12_o_add_43_OUT> created at line 120.
+    Found 7-bit adder for signal <k_cnt[6]_GND_12_o_add_49_OUT> created at line 136.
+INFO:Xst:3019 - HDL ADVISOR - 1024 flip-flops were inferred for signal <s_arr_tmp>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 32-bit 4-to-1 multiplexer for signal <n0406> created at line 48.
+    Found 32-bit 32-to-1 multiplexer for signal <b_tmp2> created at line 50.
+    Found 32-bit 26-to-1 multiplexer for signal <n0409> created at line 84.
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred 1038 D-type flip-flop(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <rc5_key_exp> synthesized.
+
+Synthesizing Unit <source>.
+    Related source file is "c:/users/kac/desktop/rc5 - all/source.vhd".
+    Found 4x64-bit Read Only RAM for signal <plain_cipher>
+    Summary:
+	inferred   1 RAM(s).
+Unit <source> synthesized.
+
+Synthesizing Unit <outputProcessor>.
+    Related source file is "c:/users/kac/desktop/rc5 - all/outputproc.vhd".
+    Found 1-bit register for signal <digit3en>.
+    Found 1-bit register for signal <digit2en>.
+    Found 1-bit register for signal <digit1en>.
+    Found 1-bit register for signal <digit0en>.
+    Found 4-bit register for signal <selectedDigit>.
+    Found 32-bit register for signal <nextDigit>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit adder for signal <counter[31]_GND_15_o_add_2_OUT> created at line 62.
+    Found 32-bit adder for signal <nextDigit[31]_GND_15_o_add_10_OUT> created at line 99.
+    Found 16-bit 4-to-1 multiplexer for signal <currentQrt> created at line 42.
+    Found 4-bit 4-to-1 multiplexer for signal <_n0062> created at line 66.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  72 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <outputProcessor> synthesized.
+
+Synthesizing Unit <digitConverter>.
+    Related source file is "c:/users/kac/desktop/rc5 - all/digitconverter.vhd".
+    Found 16x7-bit Read Only RAM for signal <digitOut>
+    Summary:
+	inferred   1 RAM(s).
+Unit <digitConverter> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x7-bit single-port Read Only RAM                    : 1
+ 4x64-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 19
+ 2-bit adder                                           : 1
+ 31-bit adder                                          : 1
+ 32-bit adder                                          : 9
+ 32-bit subtractor                                     : 4
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 1
+ 7-bit adder                                           : 1
+# Registers                                            : 119
+ 1-bit register                                        : 74
+ 2-bit register                                        : 1
+ 31-bit register                                       : 1
+ 32-bit register                                       : 36
+ 4-bit register                                        : 3
+ 5-bit register                                        : 1
+ 64-bit register                                       : 2
+ 7-bit register                                        : 1
+# Comparators                                          : 1
+ 31-bit comparator greater                             : 1
+# Multiplexers                                         : 34
+ 16-bit 4-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 26-to-1 multiplexer                            : 5
+ 32-bit 32-to-1 multiplexer                            : 5
+ 32-bit 4-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 2
+ 4-bit 4-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 1
+ 64-bit 2-to-1 multiplexer                             : 6
+ 7-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 4
+# Xors                                                 : 4
+ 32-bit xor2                                           : 4
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <RC5_NX3>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <RC5_NX3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <digitConverter>.
+INFO:Xst:3231 - The small RAM <Mram_digitOut> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <digitIn>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <digitOut>      |          |
+    -----------------------------------------------------------------------
+Unit <digitConverter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <outputProcessor>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+The following registers are absorbed into counter <nextDigit>: 1 register on signal <nextDigit>.
+Unit <outputProcessor> synthesized (advanced).
+
+Synthesizing (advanced) Unit <rc5_key_exp>.
+The following registers are absorbed into counter <j_cnt>: 1 register on signal <j_cnt>.
+The following registers are absorbed into counter <k_cnt>: 1 register on signal <k_cnt>.
+The following registers are absorbed into counter <i_cnt>: 1 register on signal <i_cnt>.
+Unit <rc5_key_exp> synthesized (advanced).
+
+Synthesizing (advanced) Unit <source>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_plain_cipher> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 64-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <sel>           |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <plain_cipher>  |          |
+    -----------------------------------------------------------------------
+Unit <source> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x7-bit single-port distributed Read Only RAM        : 1
+ 4x64-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 13
+ 32-bit adder                                          : 7
+ 32-bit subtractor                                     : 4
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 6
+ 2-bit up counter                                      : 1
+ 31-bit up counter                                     : 1
+ 32-bit up counter                                     : 2
+ 5-bit up counter                                      : 1
+ 7-bit up counter                                      : 1
+# Registers                                            : 1302
+ Flip-Flops                                            : 1302
+# Comparators                                          : 1
+ 31-bit comparator greater                             : 1
+# Multiplexers                                         : 62
+ 1-bit 26-to-1 multiplexer                             : 32
+ 16-bit 4-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 26-to-1 multiplexer                            : 4
+ 32-bit 32-to-1 multiplexer                            : 5
+ 32-bit 4-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 2
+ 4-bit 4-to-1 multiplexer                              : 1
+ 64-bit 2-to-1 multiplexer                             : 6
+# FSMs                                                 : 4
+# Xors                                                 : 4
+ 32-bit xor2                                           : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:3]> with user encoding.
+---------------------------
+ State         | Encoding
+---------------------------
+ idle_state    | 000
+ key_exp_state | 001
+ enc_state     | 010
+ dec_state     | 011
+ rdy_state     | 100
+---------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <map_rc5_enc/FSM_1> on signal <state[1:2]> with user encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ idle      | 00
+ pre_round | 01
+ round_op  | 10
+ ready     | 11
+-----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <map_rc5_dec/FSM_2> on signal <state[1:2]> with user encoding.
+------------------------
+ State      | Encoding
+------------------------
+ idle       | 00
+ round_op   | 01
+ post_round | 10
+ ready      | 11
+------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <map_rc5_key_exp/FSM_3> on signal <state[1:2]> with gray encoding.
+----------------------------
+ State          | Encoding
+----------------------------
+ idle_state     | 00
+ key_init_state | 01
+ key_exp_state  | 11
+ rdy_state      | 10
+----------------------------
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    a_reg_0 in unit <rc5_dec>
+    b_reg_0 in unit <rc5_dec>
+    b_reg_1 in unit <rc5_dec>
+    b_reg_2 in unit <rc5_dec>
+    b_reg_3 in unit <rc5_dec>
+    b_reg_4 in unit <rc5_dec>
+    b_reg_6 in unit <rc5_dec>
+    b_reg_7 in unit <rc5_dec>
+    b_reg_5 in unit <rc5_dec>
+    b_reg_8 in unit <rc5_dec>
+    b_reg_9 in unit <rc5_dec>
+    b_reg_11 in unit <rc5_dec>
+    b_reg_12 in unit <rc5_dec>
+    b_reg_10 in unit <rc5_dec>
+    b_reg_13 in unit <rc5_dec>
+    b_reg_14 in unit <rc5_dec>
+    b_reg_16 in unit <rc5_dec>
+    b_reg_17 in unit <rc5_dec>
+    b_reg_15 in unit <rc5_dec>
+    b_reg_18 in unit <rc5_dec>
+    b_reg_19 in unit <rc5_dec>
+    b_reg_21 in unit <rc5_dec>
+    b_reg_22 in unit <rc5_dec>
+    b_reg_20 in unit <rc5_dec>
+    b_reg_23 in unit <rc5_dec>
+    b_reg_24 in unit <rc5_dec>
+    b_reg_26 in unit <rc5_dec>
+    b_reg_27 in unit <rc5_dec>
+    b_reg_25 in unit <rc5_dec>
+    b_reg_28 in unit <rc5_dec>
+    b_reg_29 in unit <rc5_dec>
+    b_reg_31 in unit <rc5_dec>
+    b_reg_30 in unit <rc5_dec>
+    a_reg_1 in unit <rc5_dec>
+    a_reg_2 in unit <rc5_dec>
+    a_reg_4 in unit <rc5_dec>
+    a_reg_5 in unit <rc5_dec>
+    a_reg_3 in unit <rc5_dec>
+    a_reg_6 in unit <rc5_dec>
+    a_reg_7 in unit <rc5_dec>
+    a_reg_9 in unit <rc5_dec>
+    a_reg_10 in unit <rc5_dec>
+    a_reg_8 in unit <rc5_dec>
+    a_reg_11 in unit <rc5_dec>
+    a_reg_12 in unit <rc5_dec>
+    a_reg_14 in unit <rc5_dec>
+    a_reg_15 in unit <rc5_dec>
+    a_reg_13 in unit <rc5_dec>
+    a_reg_16 in unit <rc5_dec>
+    a_reg_17 in unit <rc5_dec>
+    a_reg_19 in unit <rc5_dec>
+    a_reg_20 in unit <rc5_dec>
+    a_reg_18 in unit <rc5_dec>
+    a_reg_21 in unit <rc5_dec>
+    a_reg_22 in unit <rc5_dec>
+    a_reg_24 in unit <rc5_dec>
+    a_reg_25 in unit <rc5_dec>
+    a_reg_23 in unit <rc5_dec>
+    a_reg_26 in unit <rc5_dec>
+    a_reg_27 in unit <rc5_dec>
+    a_reg_29 in unit <rc5_dec>
+    a_reg_30 in unit <rc5_dec>
+    a_reg_28 in unit <rc5_dec>
+    a_reg_31 in unit <rc5_dec>
+
+
+Optimizing unit <RC5_NX3> ...
+
+Optimizing unit <outputProcessor> ...
+
+Optimizing unit <rc5_enc> ...
+
+Optimizing unit <rc5_dec> ...
+
+Optimizing unit <rc5_key_exp> ...
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_2> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_3> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_4> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_5> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_6> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_7> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_8> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_9> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_10> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_11> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_12> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_13> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_14> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_15> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_16> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_17> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_18> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_19> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_20> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_21> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_22> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_23> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_24> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_25> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_26> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_27> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_28> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_29> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_30> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <map_output_processor/nextDigit_31> has a constant value of 0 in block <RC5_NX3>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <map_rc5_key_exp/i_cnt_0> in Unit <RC5_NX3> is equivalent to the following 2 FFs/Latches, which will be removed : <map_rc5_key_exp/k_cnt_0> <map_rc5_key_exp/j_cnt_0> 
+INFO:Xst:3203 - The FF/Latch <send_clr> in Unit <RC5_NX3> is the opposite to the following FF/Latch, which will be removed : <gen_key> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block RC5_NX3, actual ratio is 35.
+FlipFlop map_rc5_key_exp/i_cnt_0 has been replicated 12 time(s)
+FlipFlop map_rc5_key_exp/i_cnt_1 has been replicated 11 time(s)
+FlipFlop map_rc5_key_exp/i_cnt_2 has been replicated 4 time(s)
+FlipFlop map_rc5_key_exp/i_cnt_3 has been replicated 4 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1472
+ Flip-Flops                                            : 1472
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : RC5_NX3.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3207
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 62
+#      LUT2                        : 145
+#      LUT3                        : 208
+#      LUT4                        : 264
+#      LUT5                        : 203
+#      LUT6                        : 1434
+#      MUXCY                       : 378
+#      MUXF7                       : 119
+#      VCC                         : 1
+#      XORCY                       : 385
+# FlipFlops/Latches                : 1486
+#      FD                          : 7
+#      FDC                         : 104
+#      FDCE                        : 721
+#      FDE                         : 133
+#      FDP                         : 59
+#      FDPE                        : 418
+#      FDR                         : 26
+#      FDRE                        : 2
+#      FDSE                        : 2
+#      LDC                         : 14
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 7
+#      OBUF                        : 16
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1486  out of  18224     8%  
+ Number of Slice LUTs:                 2323  out of   9112    25%  
+    Number used as Logic:              2323  out of   9112    25%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   3404
+   Number with an unused Flip Flop:    1918  out of   3404    56%  
+   Number with an unused LUT:          1081  out of   3404    31%  
+   Number of fully used LUT-FF pairs:   405  out of   3404    11%  
+   Number of unique control sets:        73
+
+IO Utilization: 
+ Number of IOs:                          24
+ Number of bonded IOBs:                  24  out of    232    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------------------------+----------------------------------+-------+
+Clock Signal                                                           | Clock buffer(FF name)            | Load  |
+-----------------------------------------------------------------------+----------------------------------+-------+
+clock                                                                  | BUFG                             | 1440  |
+clk                                                                    | BUFGP                            | 32    |
+map_rc5_dec/clr_din[0]_AND_127_o(map_rc5_dec/clr_din[0]_AND_127_o1:O)  | NONE(*)(map_rc5_dec/b_reg_0_LDC) | 1     |
+map_rc5_dec/clr_din[4]_AND_119_o(map_rc5_dec/clr_din[4]_AND_119_o1:O)  | NONE(*)(map_rc5_dec/b_reg_4_LDC) | 1     |
+map_rc5_dec/clr_din[6]_AND_115_o(map_rc5_dec/clr_din[6]_AND_115_o1:O)  | NONE(*)(map_rc5_dec/b_reg_6_LDC) | 1     |
+map_rc5_dec/clr_din[0]_AND_128_o(map_rc5_dec/clr_din[0]_AND_128_o1:O)  | NONE(*)(map_rc5_dec/b_reg_7_LDC) | 1     |
+map_rc5_dec/clr_din[8]_AND_111_o(map_rc5_dec/clr_din[8]_AND_111_o1:O)  | NONE(*)(map_rc5_dec/b_reg_8_LDC) | 1     |
+map_rc5_dec/clr_din[6]_AND_116_o(map_rc5_dec/clr_din[6]_AND_116_o1:O)  | NONE(*)(map_rc5_dec/b_reg_9_LDC) | 1     |
+map_rc5_dec/clr_din[4]_AND_120_o(map_rc5_dec/clr_din[4]_AND_120_o1:O)  | NONE(*)(map_rc5_dec/b_reg_11_LDC)| 1     |
+map_rc5_dec/clr_din[13]_AND_101_o(map_rc5_dec/clr_din[13]_AND_101_o1:O)| NONE(*)(map_rc5_dec/b_reg_13_LDC)| 1     |
+map_rc5_dec/clr_din[14]_AND_99_o(map_rc5_dec/clr_din[14]_AND_99_o1:O)  | NONE(*)(map_rc5_dec/b_reg_14_LDC)| 1     |
+map_rc5_dec/clr_din[13]_AND_102_o(map_rc5_dec/clr_din[13]_AND_102_o1:O)| NONE(*)(map_rc5_dec/b_reg_16_LDC)| 1     |
+map_rc5_dec/clr_din[17]_AND_93_o(map_rc5_dec/clr_din[17]_AND_93_o1:O)  | NONE(*)(map_rc5_dec/b_reg_17_LDC)| 1     |
+map_rc5_dec/clr_din[8]_AND_112_o(map_rc5_dec/clr_din[8]_AND_112_o1:O)  | NONE(*)(map_rc5_dec/b_reg_26_LDC)| 1     |
+map_rc5_dec/clr_din[14]_AND_100_o(map_rc5_dec/clr_din[14]_AND_100_o1:O)| NONE(*)(map_rc5_dec/b_reg_25_LDC)| 1     |
+map_rc5_dec/clr_din[17]_AND_94_o(map_rc5_dec/clr_din[17]_AND_94_o1:O)  | NONE(*)(map_rc5_dec/a_reg_12_LDC)| 1     |
+-----------------------------------------------------------------------+----------------------------------+-------+
+(*) These 14 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 13.790ns (Maximum Frequency: 72.517MHz)
+   Minimum input arrival time before clock: 6.576ns
+   Maximum output required time after clock: 5.455ns
+   Maximum combinational path delay: 6.257ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 13.790ns (frequency: 72.517MHz)
+  Total number of paths / destination ports: 7657519069 / 3939
+-------------------------------------------------------------------------
+Delay:               13.790ns (Levels of Logic = 54)
+  Source:            map_rc5_key_exp/i_cnt_1_9 (FF)
+  Destination:       map_rc5_key_exp/l_arr_3_26 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: map_rc5_key_exp/i_cnt_1_9 to map_rc5_key_exp/l_arr_3_26
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            19   0.447   1.176  map_rc5_key_exp/i_cnt_1_9 (map_rc5_key_exp/i_cnt_1_9)
+     LUT6:I4->O            1   0.203   0.827  map_rc5_key_exp/mux26_91 (map_rc5_key_exp/mux26_91)
+     LUT6:I2->O            1   0.203   0.000  map_rc5_key_exp/mux26_4 (map_rc5_key_exp/mux26_4)
+     MUXF7:I0->O           2   0.131   0.845  map_rc5_key_exp/mux26_2_f7 (map_rc5_key_exp/n0409<4>)
+     LUT3:I0->O            1   0.205   0.580  map_rc5_key_exp/Madd_a_tmp15 (map_rc5_key_exp/Madd_a_tmp14)
+     LUT4:I3->O            1   0.205   0.000  map_rc5_key_exp/Madd_a_tmp1_lut<0>5 (map_rc5_key_exp/Madd_a_tmp1_lut<0>5)
+     MUXCY:S->O            1   0.172   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_4 (map_rc5_key_exp/Madd_a_tmp1_cy<0>5)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_5 (map_rc5_key_exp/Madd_a_tmp1_cy<0>6)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_6 (map_rc5_key_exp/Madd_a_tmp1_cy<0>7)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_7 (map_rc5_key_exp/Madd_a_tmp1_cy<0>8)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_8 (map_rc5_key_exp/Madd_a_tmp1_cy<0>9)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_9 (map_rc5_key_exp/Madd_a_tmp1_cy<0>10)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_10 (map_rc5_key_exp/Madd_a_tmp1_cy<0>11)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_11 (map_rc5_key_exp/Madd_a_tmp1_cy<0>12)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_12 (map_rc5_key_exp/Madd_a_tmp1_cy<0>13)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_13 (map_rc5_key_exp/Madd_a_tmp1_cy<0>14)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_14 (map_rc5_key_exp/Madd_a_tmp1_cy<0>15)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_15 (map_rc5_key_exp/Madd_a_tmp1_cy<0>16)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_16 (map_rc5_key_exp/Madd_a_tmp1_cy<0>17)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_17 (map_rc5_key_exp/Madd_a_tmp1_cy<0>18)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_18 (map_rc5_key_exp/Madd_a_tmp1_cy<0>19)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_19 (map_rc5_key_exp/Madd_a_tmp1_cy<0>20)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_20 (map_rc5_key_exp/Madd_a_tmp1_cy<0>21)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_21 (map_rc5_key_exp/Madd_a_tmp1_cy<0>22)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_22 (map_rc5_key_exp/Madd_a_tmp1_cy<0>23)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_23 (map_rc5_key_exp/Madd_a_tmp1_cy<0>24)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_24 (map_rc5_key_exp/Madd_a_tmp1_cy<0>25)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_25 (map_rc5_key_exp/Madd_a_tmp1_cy<0>26)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_26 (map_rc5_key_exp/Madd_a_tmp1_cy<0>27)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_27 (map_rc5_key_exp/Madd_a_tmp1_cy<0>28)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_a_tmp1_cy<0>_28 (map_rc5_key_exp/Madd_a_tmp1_cy<0>29)
+     XORCY:CI->O          28   0.180   1.235  map_rc5_key_exp/Madd_a_tmp1_xor<0>_29 (map_rc5_key_exp/a_tmp1<30>)
+     LUT2:I1->O            1   0.205   0.000  map_rc5_key_exp/Madd_ab_tmp_lut<1> (map_rc5_key_exp/Madd_ab_tmp_lut<1>)
+     MUXCY:S->O            1   0.172   0.000  map_rc5_key_exp/Madd_ab_tmp_cy<1> (map_rc5_key_exp/Madd_ab_tmp_cy<1>)
+     XORCY:CI->O         137   0.180   1.975  map_rc5_key_exp/Madd_ab_tmp_xor<2> (map_rc5_key_exp/ab_tmp<2>)
+     LUT2:I1->O            1   0.205   0.000  map_rc5_key_exp/Madd_b_tmp1_lut<2> (map_rc5_key_exp/Madd_b_tmp1_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<2> (map_rc5_key_exp/Madd_b_tmp1_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<3> (map_rc5_key_exp/Madd_b_tmp1_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<4> (map_rc5_key_exp/Madd_b_tmp1_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<5> (map_rc5_key_exp/Madd_b_tmp1_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<6> (map_rc5_key_exp/Madd_b_tmp1_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<7> (map_rc5_key_exp/Madd_b_tmp1_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<8> (map_rc5_key_exp/Madd_b_tmp1_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<9> (map_rc5_key_exp/Madd_b_tmp1_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<10> (map_rc5_key_exp/Madd_b_tmp1_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<11> (map_rc5_key_exp/Madd_b_tmp1_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<12> (map_rc5_key_exp/Madd_b_tmp1_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<13> (map_rc5_key_exp/Madd_b_tmp1_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<14> (map_rc5_key_exp/Madd_b_tmp1_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  map_rc5_key_exp/Madd_b_tmp1_cy<15> (map_rc5_key_exp/Madd_b_tmp1_cy<15>)
+     XORCY:CI->O           4   0.180   0.912  map_rc5_key_exp/Madd_b_tmp1_xor<16> (map_rc5_key_exp/b_tmp1<16>)
+     LUT6:I3->O           12   0.205   1.137  map_rc5_key_exp/ab_tmp<1>231 (map_rc5_key_exp/ab_tmp<1>_mmx_out3)
+     LUT6:I3->O            4   0.205   0.684  map_rc5_key_exp/ab_tmp<3>91 (map_rc5_key_exp/ab_tmp<3>_mmx_out17)
+     LUT6:I5->O            1   0.205   0.000  map_rc5_key_exp/l_arr[0][31]_ukey[31]_mux_150_OUT<10>1_G (N542)
+     MUXF7:I1->O           4   0.140   0.000  map_rc5_key_exp/l_arr[0][31]_ukey[31]_mux_150_OUT<10>1 (map_rc5_key_exp/l_arr[0][31]_ukey[31]_mux_150_OUT<10>)
+     FDCE:D                    0.102          map_rc5_key_exp/l_arr_0_10
+    ----------------------------------------
+    Total                     13.790ns (4.420ns logic, 9.370ns route)
+                                       (32.1% logic, 67.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.061ns (frequency: 326.680MHz)
+  Total number of paths / destination ports: 526 / 32
+-------------------------------------------------------------------------
+Delay:               3.061ns (Levels of Logic = 8)
+  Source:            counter_2 (FF)
+  Destination:       clock (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: counter_2 to clock
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.447   0.961  counter_2 (counter_2)
+     LUT5:I0->O            1   0.203   0.000  Mcompar_GND_7_o_counter[30]_LessThan_1_o_lut<0> (Mcompar_GND_7_o_counter[30]_LessThan_1_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<0> (Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<1> (Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<2> (Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<3> (Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<4> (Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<4>)
+     MUXCY:CI->O           1   0.213   0.684  Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<5> (Mcompar_GND_7_o_counter[30]_LessThan_1_o_cy<5>)
+     LUT2:I0->O            1   0.203   0.000  clock_rstpot (clock_rstpot)
+     FDC:D                     0.102          clock
+    ----------------------------------------
+    Total                      3.061ns (1.416ns logic, 1.645ns route)
+                                       (46.3% logic, 53.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 3391 / 428
+-------------------------------------------------------------------------
+Offset:              6.576ns (Levels of Logic = 6)
+  Source:            enc_dec (PAD)
+  Destination:       map_output_processor/selectedDigit_0 (FF)
+  Destination Clock: clock rising
+
+  Data Path: enc_dec to map_output_processor/selectedDigit_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            70   1.222   1.908  enc_dec_IBUF (show_dec_OBUF)
+     LUT4:I1->O            1   0.205   0.580  map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>6 (map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>6)
+     LUT6:I5->O            1   0.205   0.580  map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>8_SW0 (N463)
+     LUT6:I5->O            1   0.205   0.580  map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>8 (map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>8)
+     LUT6:I5->O            1   0.205   0.580  map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>9 (map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>9)
+     LUT6:I5->O            1   0.205   0.000  map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>37 (map_output_processor/currentQrt[15]_currentQrt[3]_mux_8_OUT<3>)
+     FDE:D                     0.102          map_output_processor/selectedDigit_0
+    ----------------------------------------
+    Total                      6.576ns (2.349ns logic, 4.227ns route)
+                                       (35.7% logic, 64.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              3.555ns (Levels of Logic = 1)
+  Source:            clr (PAD)
+  Destination:       counter_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: clr to counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           110   1.222   1.903  clr_IBUF (clr_IBUF)
+     FDC:CLR                   0.430          counter_0
+    ----------------------------------------
+    Total                      3.555ns (1.652ns logic, 1.903ns route)
+                                       (46.5% logic, 53.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[0]_AND_127_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.924ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_0_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[0]_AND_127_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_0_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.135  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I0->O           13   0.205   0.932  map_rc5_dec/clr_din[0]_AND_128_o1 (map_rc5_dec/clr_din[0]_AND_128_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_0_LDC
+    ----------------------------------------
+    Total                      4.924ns (1.857ns logic, 3.067ns route)
+                                       (37.7% logic, 62.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[4]_AND_119_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.609ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_4_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[4]_AND_119_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_4_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.011  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I1->O            6   0.203   0.744  map_rc5_dec/clr_din[4]_AND_120_o1 (map_rc5_dec/clr_din[4]_AND_120_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_4_LDC
+    ----------------------------------------
+    Total                      4.609ns (1.855ns logic, 2.754ns route)
+                                       (40.2% logic, 59.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[6]_AND_115_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.795ns (Levels of Logic = 2)
+  Source:            sel_val<1> (PAD)
+  Destination:       map_rc5_dec/b_reg_6_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[6]_AND_115_o falling
+
+  Data Path: sel_val<1> to map_rc5_dec/b_reg_6_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           110   1.222   2.008  sel_val_1_IBUF (map_source/Mram_plain_cipher25)
+     LUT3:I1->O           13   0.203   0.932  map_rc5_dec/clr_din[6]_AND_116_o1 (map_rc5_dec/clr_din[6]_AND_116_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_6_LDC
+    ----------------------------------------
+    Total                      4.795ns (1.855ns logic, 2.940ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[0]_AND_128_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.798ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_7_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[0]_AND_128_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_7_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.011  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I1->O           13   0.203   0.932  map_rc5_dec/clr_din[0]_AND_127_o1 (map_rc5_dec/clr_din[0]_AND_127_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_7_LDC
+    ----------------------------------------
+    Total                      4.798ns (1.855ns logic, 2.943ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[8]_AND_111_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.793ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_8_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[8]_AND_111_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_8_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.135  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I0->O            8   0.205   0.802  map_rc5_dec/clr_din[8]_AND_112_o1 (map_rc5_dec/clr_din[8]_AND_112_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_8_LDC
+    ----------------------------------------
+    Total                      4.793ns (1.857ns logic, 2.936ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[6]_AND_116_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.798ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_9_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[6]_AND_116_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_9_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.011  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I1->O           13   0.203   0.932  map_rc5_dec/clr_din[6]_AND_115_o1 (map_rc5_dec/clr_din[6]_AND_115_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_9_LDC
+    ----------------------------------------
+    Total                      4.798ns (1.855ns logic, 2.943ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[4]_AND_120_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.735ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_11_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[4]_AND_120_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_11_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.135  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I0->O            6   0.205   0.744  map_rc5_dec/clr_din[4]_AND_119_o1 (map_rc5_dec/clr_din[4]_AND_119_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_11_LDC
+    ----------------------------------------
+    Total                      4.735ns (1.857ns logic, 2.878ns route)
+                                       (39.2% logic, 60.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[13]_AND_101_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.694ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_13_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[13]_AND_101_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_13_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.011  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT2:I0->O            9   0.203   0.829  map_rc5_dec/clr_din[13]_AND_102_o1 (map_rc5_dec/clr_din[13]_AND_102_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_13_LDC
+    ----------------------------------------
+    Total                      4.694ns (1.855ns logic, 2.839ns route)
+                                       (39.5% logic, 60.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[14]_AND_99_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.590ns (Levels of Logic = 2)
+  Source:            sel_val<1> (PAD)
+  Destination:       map_rc5_dec/b_reg_14_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[14]_AND_99_o falling
+
+  Data Path: sel_val<1> to map_rc5_dec/b_reg_14_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           110   1.222   1.904  sel_val_1_IBUF (map_source/Mram_plain_cipher25)
+     LUT2:I1->O            9   0.205   0.829  map_rc5_dec/clr_din[14]_AND_100_o1 (map_rc5_dec/clr_din[14]_AND_100_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_14_LDC
+    ----------------------------------------
+    Total                      4.590ns (1.857ns logic, 2.733ns route)
+                                       (40.5% logic, 59.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[13]_AND_102_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.592ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_16_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[13]_AND_102_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_16_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   1.907  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT2:I1->O            9   0.205   0.829  map_rc5_dec/clr_din[13]_AND_101_o1 (map_rc5_dec/clr_din[13]_AND_101_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_16_LDC
+    ----------------------------------------
+    Total                      4.592ns (1.857ns logic, 2.735ns route)
+                                       (40.4% logic, 59.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[17]_AND_93_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.722ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_17_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[17]_AND_93_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_17_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.011  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I1->O           10   0.203   0.856  map_rc5_dec/clr_din[17]_AND_94_o1 (map_rc5_dec/clr_din[17]_AND_94_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_17_LDC
+    ----------------------------------------
+    Total                      4.722ns (1.855ns logic, 2.867ns route)
+                                       (39.3% logic, 60.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[8]_AND_112_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.667ns (Levels of Logic = 2)
+  Source:            sel_val<0> (PAD)
+  Destination:       map_rc5_dec/b_reg_26_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[8]_AND_112_o falling
+
+  Data Path: sel_val<0> to map_rc5_dec/b_reg_26_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.011  sel_val_0_IBUF (map_source/Mram_plain_cipher13)
+     LUT3:I1->O            8   0.203   0.802  map_rc5_dec/clr_din[8]_AND_111_o1 (map_rc5_dec/clr_din[8]_AND_111_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_26_LDC
+    ----------------------------------------
+    Total                      4.667ns (1.855ns logic, 2.812ns route)
+                                       (39.7% logic, 60.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[14]_AND_100_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.692ns (Levels of Logic = 2)
+  Source:            sel_val<1> (PAD)
+  Destination:       map_rc5_dec/b_reg_25_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[14]_AND_100_o falling
+
+  Data Path: sel_val<1> to map_rc5_dec/b_reg_25_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           110   1.222   2.008  sel_val_1_IBUF (map_source/Mram_plain_cipher25)
+     LUT2:I0->O            9   0.203   0.829  map_rc5_dec/clr_din[14]_AND_99_o1 (map_rc5_dec/clr_din[14]_AND_99_o)
+     LDC:CLR                   0.430          map_rc5_dec/b_reg_25_LDC
+    ----------------------------------------
+    Total                      4.692ns (1.855ns logic, 2.837ns route)
+                                       (39.5% logic, 60.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'map_rc5_dec/clr_din[17]_AND_94_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              4.719ns (Levels of Logic = 2)
+  Source:            sel_val<1> (PAD)
+  Destination:       map_rc5_dec/a_reg_12_LDC (LATCH)
+  Destination Clock: map_rc5_dec/clr_din[17]_AND_94_o falling
+
+  Data Path: sel_val<1> to map_rc5_dec/a_reg_12_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           110   1.222   2.008  sel_val_1_IBUF (map_source/Mram_plain_cipher25)
+     LUT3:I1->O           10   0.203   0.856  map_rc5_dec/clr_din[17]_AND_93_o1 (map_rc5_dec/clr_din[17]_AND_93_o)
+     LDC:CLR                   0.430          map_rc5_dec/a_reg_12_LDC
+    ----------------------------------------
+    Total                      4.719ns (1.855ns logic, 2.864ns route)
+                                       (39.3% logic, 60.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 35 / 13
+-------------------------------------------------------------------------
+Offset:              5.455ns (Levels of Logic = 2)
+  Source:            map_rc5_key_exp/state_FSM_FFd1 (FF)
+  Destination:       key_gen (PAD)
+  Source Clock:      clock rising
+
+  Data Path: map_rc5_key_exp/state_FSM_FFd1 to key_gen
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             66   0.447   1.654  map_rc5_key_exp/state_FSM_FFd1 (map_rc5_key_exp/state_FSM_FFd1)
+     LUT2:I1->O            1   0.205   0.579  map_rc5_key_exp/state_key_rdy1 (key_gen_OBUF)
+     OBUF:I->O                 2.571          key_gen_OBUF (key_gen)
+    ----------------------------------------
+    Total                      5.455ns (3.223ns logic, 2.232ns route)
+                                       (59.1% logic, 40.9% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               6.257ns (Levels of Logic = 3)
+  Source:            enc_dec (PAD)
+  Destination:       show_enc (PAD)
+
+  Data Path: enc_dec to show_enc
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            70   1.222   1.679  enc_dec_IBUF (show_dec_OBUF)
+     INV:I->O              1   0.206   0.579  show_enc1_INV_0 (show_enc_OBUF)
+     OBUF:I->O                 2.571          show_enc_OBUF (show_enc)
+    ----------------------------------------
+    Total                      6.257ns (3.999ns logic, 2.258ns route)
+                                       (63.9% logic, 36.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.061|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clock
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+clock                            |   13.790|         |         |         |
+map_rc5_dec/clr_din[0]_AND_127_o |         |   10.904|         |         |
+map_rc5_dec/clr_din[0]_AND_128_o |         |   10.880|         |         |
+map_rc5_dec/clr_din[13]_AND_101_o|         |   10.702|         |         |
+map_rc5_dec/clr_din[13]_AND_102_o|         |   10.369|         |         |
+map_rc5_dec/clr_din[14]_AND_100_o|         |   10.148|         |         |
+map_rc5_dec/clr_din[14]_AND_99_o |         |   10.705|         |         |
+map_rc5_dec/clr_din[17]_AND_93_o |         |   10.710|         |         |
+map_rc5_dec/clr_din[17]_AND_94_o |         |    7.155|         |         |
+map_rc5_dec/clr_din[4]_AND_119_o |         |   10.588|         |         |
+map_rc5_dec/clr_din[4]_AND_120_o |         |   10.464|         |         |
+map_rc5_dec/clr_din[6]_AND_115_o |         |   10.958|         |         |
+map_rc5_dec/clr_din[6]_AND_116_o |         |   10.756|         |         |
+map_rc5_dec/clr_din[8]_AND_111_o |         |   10.577|         |         |
+map_rc5_dec/clr_din[8]_AND_112_o |         |   10.193|         |         |
+---------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[0]_AND_127_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.278|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[0]_AND_128_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.506|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[13]_AND_101_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.175|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[13]_AND_102_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.277|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[14]_AND_100_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.175|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[14]_AND_99_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.277|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[17]_AND_93_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.430|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[17]_AND_94_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.430|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[4]_AND_119_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.318|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[4]_AND_120_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.090|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[6]_AND_115_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.506|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[6]_AND_116_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.506|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[8]_AND_111_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.147|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock map_rc5_dec/clr_din[8]_AND_112_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |         |         |    3.375|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 81.00 secs
+Total CPU time to Xst completion: 81.23 secs
+ 
+--> 
+
+Total memory usage is 314116 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   32 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

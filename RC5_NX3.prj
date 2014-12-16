@@ -1,0 +1,8 @@
+vhdl work "../rc5_pkg.vhd"
+vhdl work "../DigitConverter.vhd"
+vhdl work "../Source.vhd"
+vhdl work "../rc5_key_exp.vhd"
+vhdl work "../rc5_enc.vhd"
+vhdl work "../rc5_dec.vhd"
+vhdl work "../OutputProc.vhd"
+vhdl work "../rc5_complete_design.vhd"
